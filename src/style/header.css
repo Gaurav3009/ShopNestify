@@ -1,0 +1,112 @@
+.navigation {
+    height: 80px;
+    background-color: #ffb51f;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2vw;
+}
+
+.logo {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.btn{
+    list-style: none;
+    display: inline;
+    font-size: 1.5rem;
+}
+
+.btn:not(:first-child) {
+    margin-left: 5vw;
+}
+
+#drawer {
+    display: none;
+}
+
+.drawer {
+    display: inline;
+}
+
+.drawer:hover {
+    cursor: pointer;
+}
+
+.inactive {
+    display: none;
+}
+
+@media (max-width: 768px) { 
+    .navigation {
+        padding: 0 5vw;
+        position: relative;
+    }
+    .logo {
+        font-size: 2rem;
+    }
+
+    .btn {
+        display: none;
+        font-size: 1.5rem;
+    }
+
+    #drawer {
+        display: inline;
+    }
+
+    .side-drawer {
+        height: 100vh;
+        width: 30%;
+        position: absolute;
+        background-color: #ffb51f;
+        top: 0;
+        right: 0;
+        z-index: 20;
+        font-size: 1rem;
+        animation: customAnimation 2s ease-in-out forwards;
+    }
+
+    .side-drawer__controls {
+        width: 100%;
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        height: 30vh;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .side-drawer__controls div:not(:last-child) {
+        
+        color: black;
+    }
+
+    .side-drawer__controls div:last-child {
+        color: blue;
+        font-weight: 300;
+    }
+
+    .side-drawer__controls div:last-child:hover {
+        cursor: pointer;
+    }
+
+    
+}
+
+@keyframes customAnimation {
+    0% {
+      width: 0%;
+      font-size: 0rem;
+    }
+
+    50% {
+        font-size: 0.5rem;
+    }
+
+    100% {
+      width: 30%;
+    }
+  }
